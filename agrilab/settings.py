@@ -72,10 +72,10 @@ WSGI_APPLICATION = "agrilab.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+DATABASE_URL = os.environ.get("DATABASE_URL") or "postgresql://localhost:5432/agrilab"
 DATABASES = {
     "default": dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default="postgresql://localhost:5432/agrilab",
+        default=DATABASE_URL,
         conn_max_age=600,
     )
 }

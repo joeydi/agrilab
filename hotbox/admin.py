@@ -20,6 +20,8 @@ class ReadingAdmin(admin.ModelAdmin):
         "source",
         "date",
     ]
+    list_filter = ["source"]
+    date_hierarchy = "date"
 
     def T_IN(self, instance):
         # data = json.loads(instance.data)
